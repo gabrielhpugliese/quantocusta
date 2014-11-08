@@ -8,7 +8,7 @@ autopublish
 insecure
 iron:router
 mizzao:bootstrap-3
-mrt:googlemaps
 aldeed:autoform
 aldeed:collection2
-
+jquery
+manuelschoebel:wait-on-lib
