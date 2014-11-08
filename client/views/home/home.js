@@ -5,14 +5,22 @@ googleMapsLoaded = function () {
 
 Home = {};
 
-Tracker.autorun(function () {
-  if (Session.equals('googleMapsLoaded', true)) {
-    Home.autocomplete = new google.maps.places.Autocomplete(
-        this.$('.place').get(0),
-        { types: ['geocode'] }
-    );
-  }
-});
+Template.Home.rendered = function () {
+  Tracker.autorun(function startGMapsAutocomplete () {
+    if (! Meteor.user()) {
+      return false;
+    }
+
+    if (Session.equals('googleMapsLoaded', true)) {
+      _.defer(function () {
+        Home.autocomplete = new google.maps.places.Autocomplete(
+          this.$('.place').get(0),
+          { types: ['geocode'] }
+        );
+      });
+    }
+  });
+};
 
 AutoForm.hooks({
   'questions-form': {

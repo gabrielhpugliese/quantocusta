@@ -4,6 +4,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <ul class="nav navbar-nav">
+        <li><a href="{{ pathFor 'home' }}">Home</a></li>
         <li><a href="{{ pathFor 'questions' }}">Perguntas</a></li>
       </ul>
       <div class="navbar-brand navbar-brand-centered">Quanto Custa?</div>
@@ -12,7 +13,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-brand-centered">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li>{{> loginButtons}}</li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
