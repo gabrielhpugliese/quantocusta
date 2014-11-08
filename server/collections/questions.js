@@ -1,5 +1,6 @@
 Questions.before.insert(function (doc, userId) {
   doc.owner = userId;
+  doc.prices = [];
 });
 
 Questions.allow({
